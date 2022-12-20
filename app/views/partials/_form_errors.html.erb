@@ -3,7 +3,7 @@
 <% if errors.any? %>
   <div class="alert alert-danger">
     <div class="lead buffer-bottom">
-      В вашей форме <%= errors.count %> ошибок
+      There are <%= pluralize(errors.count, "error") %> in your form.
     </div>
 
     <ul>
