@@ -1,13 +1,13 @@
 <h2>Sign up</h2>
-<div class="col-md-8 buffer-bottom">
+<div class="col-md-8">
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field small-buffer-top">
+    <div class="field mb-2">
       <div class="input-group">
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-envelope"></span>
+        <span id="email-addon" class="input-group-text">
+          <i class="bi bi-envelope"></i>
         </span>
         <%= f.email_field :email,
                           autofocus: true,
@@ -17,10 +17,10 @@
       </div>
     </div>
 
-    <div class="field small-buffer-top">
+    <div class="field mb-2">
       <div class="input-group">
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-user"></span>
+        <span class="input-group-text">
+          <span class="bi bi-person"></span>
         </span>
         <%= f.text_field :name,
                          autocomplete: "name",
@@ -29,10 +29,10 @@
       </div>
     </div>
 
-    <div class="field small-buffer-top">
+    <div class="field mb-2">
       <div class="input-group">
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-lock"></span>
+        <span class="input-group-text">
+          <span class="bi bi-key"></span>
         </span>
         <% password_placeholder = "Password" %>
         <% if @minimum_password_length %>
@@ -45,10 +45,10 @@
       </div>
     </div>
 
-    <div class="field small-buffer-top">
+    <div class="field mb-2">
       <div class="input-group">
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-lock"></span>
+        <span class="input-group-text">
+          <span class="bi bi-keybi bi-key"></span>
         </span>
         <%= f.password_field :password_confirmation,
                              autocomplete: "new-password",
@@ -57,7 +57,7 @@
       </div>
     </div>
 
-    <div class="actions small-buffer-top">
+    <div class="actions mb-2">
       <%= f.submit "Sign In", class: "btn btn-primary" %>
       or
       <%= link_to "Log In", new_user_session_path %>

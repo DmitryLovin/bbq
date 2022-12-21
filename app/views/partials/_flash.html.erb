@@ -1,0 +1,17 @@
+<% if flash.present? %>
+  <% flash.each do |type, message| %>
+    <% flash_type = type == "notice" ? "success" : "danger" %>
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="<%= "alert alert-#{flash_type} alert-dismissible fade show" %>" role="alert" id="error_explanation">
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          <ul>
+            <li>
+              <%= message %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

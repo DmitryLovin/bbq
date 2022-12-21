@@ -1,12 +1,12 @@
 <h2>Log in</h2>
 
-<div class="col-md-8 buffer-bottom">
+<div class="col-md-8">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <div class="field small-buffer-top">
+    <div class="field mt-2">
       <div class="input-group">
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-envelope"></span>
+        <span class="input-group-text">
+          <i class="bi bi-envelope"></i>
         </span>
         <%= f.email_field :email,
                           autofocus: true,
@@ -16,10 +16,10 @@
       </div>
     </div>
 
-    <div class="field small-buffer-top">
+    <div class="field mt-2">
       <div class="input-group">
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-lock"></span>
+        <span class="input-group-text">
+          <i class="bi bi-key"></i>
         </span>
         <%= f.password_field :password,
                              autocomplete: "current-password",
@@ -30,9 +30,9 @@
 
     <% if devise_mapping.rememberable? %>
 
-      <div class="field small-buffer-top">
+      <div class="field mt-2">
         <div class="input-group">
-        <span class="input-group-addon">
+        <span class="input-group-text">
           <%= f.check_box :remember_me %>
         </span>
           <%= f.label :remember_me, class: "form-control" %>
@@ -41,7 +41,7 @@
 
     <% end %>
 
-    <div class="actions small-buffer-top">
+    <div class="actions mt-2">
       <%= f.submit "Log in", class: "btn btn-primary" %>
       or
       <%= link_to "Sign Up", new_user_registration_path %>

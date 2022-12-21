@@ -1,3 +1,23 @@
+.buffer-top {
+    margin-top: 20px;
+}
+
+.buffer-bottom {
+    margin-bottom: 20px;
+}
+
+.buffer-both {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Avatars for users & events */
+.img-icon, .img-icon-small {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+}
+
 .event-info {
     position: relative;
     color: white;
@@ -29,10 +49,16 @@
 
 .event-description a {
     color: #d0d0ff;
+    text-decoration: none;
 }
 
 .event-description small {
     color: #e0e0e0;
+    font-size: .5em;
+}
+
+.event-description .address {
+    font-size: .9em;
 }
 
 .event-info-inner {
@@ -43,4 +69,23 @@
     margin: 20px 0;
     width: 100%;
     height: 400px;
+}
+
+.thumbnail {
+    position: relative;
+    background: transparent;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.thumbnail h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: .3em;
+}
+
+.thumbnail-inner {
+    padding: 20px 4px 4px;
 }
