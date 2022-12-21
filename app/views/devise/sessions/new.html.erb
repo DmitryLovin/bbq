@@ -1,26 +1,51 @@
 <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="col-md-8 buffer-bottom">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <div class="field small-buffer-top">
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-envelope"></span>
+        </span>
+        <%= f.email_field :email,
+                          autofocus: true,
+                          autocomplete: "email",
+                          placeholder: "example@email.com",
+                          class: "form-control" %>
+      </div>
+    </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="field small-buffer-top">
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-lock"></span>
+        </span>
+        <%= f.password_field :password,
+                             autocomplete: "current-password",
+                             placeholder: "Password",
+                             class: "form-control" %>
+      </div>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+
+      <div class="field small-buffer-top">
+        <div class="input-group">
+        <span class="input-group-addon">
+          <%= f.check_box :remember_me %>
+        </span>
+          <%= f.label :remember_me, class: "form-control" %>
+        </div>
+      </div>
+
+    <% end %>
+
+    <div class="actions small-buffer-top">
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+      or
+      <%= link_to "Sign Up", new_user_registration_path %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

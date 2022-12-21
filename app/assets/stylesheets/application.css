@@ -27,6 +27,10 @@
     margin-bottom: 20px;
 }
 
+.small-buffer-top {
+    margin-top: 1em;
+}
+
 .img-icon, .img-icon-small {
     height: 50px;
     width: auto;

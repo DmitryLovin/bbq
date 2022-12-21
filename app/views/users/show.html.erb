@@ -5,7 +5,7 @@
 
   <% if @user == current_user %>
     <p class="buffer-top">
-      <%= link_to "Edit user", edit_user_path(@user), class: "btn btn-default" %>
+      <%= link_to "Edit user", edit_user_registration_path, class: "btn btn-default" %>
     </p>
   <% end %>
 
