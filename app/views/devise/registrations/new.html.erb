@@ -1,8 +1,8 @@
-<h2>Sign up</h2>
+<h2><%= t("application.signuping") %></h2>
 <div class="col-md-8">
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= render "partials/form_errors", model: resource %>
 
     <div class="field mb-2">
       <div class="input-group">
@@ -24,7 +24,7 @@
         </span>
         <%= f.text_field :name,
                          autocomplete: "name",
-                         placeholder: "Name",
+                         placeholder: t("activerecord.attributes.user.name"),
                          class: "form-control" %>
       </div>
     </div>
@@ -34,9 +34,9 @@
         <span class="input-group-text">
           <span class="bi bi-key"></span>
         </span>
-        <% password_placeholder = "Password" %>
+        <% password_placeholder = t("activerecord.attributes.user.password") %>
         <% if @minimum_password_length %>
-          <% password_placeholder += " (#{@minimum_password_length} characters minimum)" %>
+          <% password_placeholder += " (#{t("application.pass_length", number: @minimum_password_length)})" %>
         <% end %>
         <%= f.password_field :password,
                              autocomplete: "new-password",
@@ -52,15 +52,15 @@
         </span>
         <%= f.password_field :password_confirmation,
                              autocomplete: "new-password",
-                             placeholder: "Password confirmation",
+                             placeholder: t("activerecord.attributes.user.password_confirmation"),
                              class: "form-control" %>
       </div>
     </div>
 
     <div class="actions mb-2">
-      <%= f.submit "Sign In", class: "btn btn-primary" %>
-      or
-      <%= link_to "Log In", new_user_session_path %>
+      <%= f.submit t("application.sign_up"), class: "btn btn-primary" %>
+      <%= t("application.or") %>
+      <%= link_to t("application.log_in"), new_user_session_path %>
     </div>
 
   <% end %>

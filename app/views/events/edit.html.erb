@@ -1,5 +1,7 @@
-<h1>Edit event</h1>
+<h1><%= t("events.edit.title") %></h1>
 
-<%= render "form" %>
-<%= link_to "Show", @event %>
-<%= link_to "Back", events_path %>
+<div class="row">
+  <div class="col-md-6 buffer-top">
+    <%= render "form" %>
+  </div>
+</div>

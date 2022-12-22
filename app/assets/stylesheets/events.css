@@ -89,3 +89,23 @@
 .thumbnail-inner {
     padding: 20px 4px 4px;
 }
+
+#event_datetime_1i {
+    width: 20%;
+}
+
+#event_datetime_2i {
+    width: 27%;
+}
+
+#event_datetime_3i {
+    width: 13%;
+}
+
+#event_datetime_4i {
+    width: 13%;
+}
+
+#event_datetime_5i {
+    width: 13%;
+}

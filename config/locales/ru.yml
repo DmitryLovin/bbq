@@ -1,0 +1,60 @@
+ru:
+  activerecord:
+    attributes:
+      event:
+        address: "Адрес"
+        datetime: "Дата и время"
+        description: "Описание"
+        title: "Название"
+      user:
+        email: "Email"
+        name: "Имя"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+    models:
+      event: "Событие"
+      user: "Пользователь"
+  application:
+    account: "Профиль"
+    back: "Назад"
+    log_in: "Войти"
+    loginning: "Вход"
+    or: "или"
+    sign_up: "Зарегистрироваться"
+    signuping: "Регистрация"
+    sign_out: "Выйти"
+    pass_length: "минимум %{number} символов"
+  events:
+    index:
+      create: "Создать событие"
+      events: "События"
+    new:
+      title: "Новое событие"
+      save: "Создать"
+    edit:
+      title: "Редактирование события"
+    show:
+      change: "Редактировать"
+  controllers:
+    events:
+      created: "Событие было успешно создано"
+      destroyed: "Собитие было успешно удалено"
+      updated: "Событие было успешно изменено"
+  users:
+    edit:
+      current_pass: "Текущий пароль"
+      current_pass_hint: "нам нужен ваш тукущий пароль, чтобы подтвердить ваши изменения"
+      delete:
+        body: "Вы точно хотите удалить свой аккаунт?"
+        btn: "Удалить аккаунт"
+        cancel: "Отмена"
+        confirm: "Удалить"
+        title: "Подтвердите действие"
+      leave_empty: "Оставьте пустым, если не хотите менять пароль"
+      title: "Редактирование профиля"
+      update: "Сохранить"
+    show:
+      edit: "Редактировать"
+      no_events: "Пользователь пока ещё не организовал ни одного события"
+      organized: "Организовал"
+

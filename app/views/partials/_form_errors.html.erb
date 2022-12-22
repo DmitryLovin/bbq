@@ -1,12 +1,13 @@
-<% errors = model.errors %>
+<% errors = model.errors if model.present? %>
 
-<% if errors.any? %>
-  <div class="alert alert-danger">
-    <div class="lead buffer-bottom">
-      There are <%= pluralize(errors.count, "error") %> in your form.
+<% if errors.present? && errors.any? %>
+  <div class="p-2 alert alert-danger alert-dismissible fade show" role="alert" id="error_explanation">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="fs-5">
+      Форма содержит <%= errors.count %> <%= inclination(errors.count, "ошибку", "ошибки", "ошибок") %>.
     </div>
 
-    <ul>
+    <ul class="mb-0">
       <% errors.each do |error| %>
         <li><%= error.full_message %></li>
       <% end %>

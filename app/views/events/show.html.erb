@@ -8,14 +8,14 @@
         <div class="col-md-6 mt-3">
           <div class="event-description">
             <h1><%= @event.title %></h1>
-            <h3><%= @event.datetime %></h3>
+            <h3><%= l @event.datetime, format: :long %></h3>
             <h3><small><%= link_to @event.address,
                                    "https://maps.google.com/?q=#{@event.address}" %></small></h3>
             <p><%= @event.description %></p>
           </div>
           <% if current_user_can_edit?(@event) %>
-            <div class="buffer-top">
-              <%= link_to "Change", edit_event_path(@event),
+            <div class="mt-2 mb-2">
+              <%= link_to t("events.show.change"), edit_event_path(@event),
                           class: "btn btn-primary" %>
             </div>
           <% end %>

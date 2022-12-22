@@ -1,28 +1,52 @@
 <%= form_for(@event) do |f| %>
-  <%= render partial: "devise/shared/error_messages", locals: { resource: @event } %>
+  <%= render partial: "partials/form_errors", locals: { model: @event } %>
 
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
+  <div class="field mt-2">
+    <div class="input-group">
+        <span class="input-group-text">
+          <i class="bi bi-chat-square-heart"></i>
+        </span>
+      <%= f.text_field :title,
+                        placeholder: t("activerecord.attributes.event.title"),
+                        class: "form-control" %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_field :address, class: "form-control" %>
+  <div class="field mt-2">
+    <div class="input-group">
+        <span class="input-group-text">
+          <i class="bi bi-globe-americas"></i>
+        </span>
+      <%= f.text_field :address,
+                       placeholder: t("activerecord.attributes.event.address"),
+                       class: "form-control" %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :datetime %>
-    <p><%= f.datetime_select :datetime, class: "form-control" %></p>
+  <div class="field mt-2">
+    <div class="input-group">
+        <span class="input-group-text">
+          <i class="bi bi-calendar-date"></i>
+        </span>
+      <%= f.datetime_select :datetime, {time_separator: "", datetime_separator: ""},
+                       class: "form-select" %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :description %>
-    <%= f.text_area :description, class: "form-control" %>
+  <div class="field mt-2">
+    <div class="input-group">
+        <span class="input-group-text">
+          <i class="bi bi-card-text"></i>
+        </span>
+      <%= f.text_area :description,
+                       placeholder: t("activerecord.attributes.event.description"),
+                       class: "form-control" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Save", class: "btn btn-primary" %>
-    or <%= link_to "back", :back %>
+  <div class="actions mt-2">
+    <%= f.submit t("events.new.save"), class: "btn btn-primary" %>
+    <%= t("application.or") %>
+    <%= link_to t("application.back"), :back %>
   </div>
 <% end %>

@@ -1,4 +1,4 @@
-<h2>Log in</h2>
+<h2><%= t("application.loginning") %></h2>
 
 <div class="col-md-8">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -23,7 +23,7 @@
         </span>
         <%= f.password_field :password,
                              autocomplete: "current-password",
-                             placeholder: "Password",
+                             placeholder: t("activerecord.attributes.user.password"),
                              class: "form-control" %>
       </div>
     </div>
@@ -42,9 +42,9 @@
     <% end %>
 
     <div class="actions mt-2">
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-      or
-      <%= link_to "Sign Up", new_user_registration_path %>
+      <%= f.submit t("application.log_in"), class: "btn btn-primary" %>
+      <%= t("application.or") %>
+      <%= link_to t("application.sign_up"), new_user_registration_path %>
     </div>
   <% end %>
 
