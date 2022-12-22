@@ -4,7 +4,8 @@
   <div class="p-2 alert alert-danger alert-dismissible fade show" role="alert" id="error_explanation">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     <div class="fs-5">
-      Форма содержит <%= errors.count %> <%= inclination(errors.count, "ошибку", "ошибки", "ошибок") %>.
+
+      Форма содержит <%= I18n.t("words.errors", count: errors.count) %>.
     </div>
 
     <ul class="mb-0">

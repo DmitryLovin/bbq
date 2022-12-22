@@ -11,7 +11,7 @@ gem "devise-i18n"
 gem "importmap-rails"
 gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.4"
-gem "russian"
+gem "rails-i18n"
 gem "sprockets-rails"
 gem "twitter-bootstrap-rails"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
