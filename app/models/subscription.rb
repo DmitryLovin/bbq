@@ -9,7 +9,7 @@ class Subscription < ApplicationRecord
             unless: -> { user.present? }
 
   validates :user, uniqueness: { scope: :event_id }, if: -> { user.present? }
-  validate :self_subscription
+  validate :self_subscription, if: -> { user.present? }
   validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
   validate :foreign_email, unless: -> { user.present? }
 
@@ -20,7 +20,7 @@ class Subscription < ApplicationRecord
   end
 
   def self_subscription
-    if user.present? && event.user == user
+    if event.user == user
       errors.add(:user, I18n.t("activerecord.validates.subscriptions.self_subscription"));
     end
   end
