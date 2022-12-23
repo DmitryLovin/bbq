@@ -12,6 +12,7 @@ ru:
       subscription:
         user_name: "Имя пользователя"
         user_email: "Email"
+        user: "Пользователь"
       user:
         email: "Email"
         name: "Имя"
@@ -20,6 +21,9 @@ ru:
     models:
       event: "Событие"
       user: "Пользователь"
+    validates:
+      subscriptions:
+        self_subscription: "Нельзя подписаться на собственное событие"
 
   comments:
     comment:
