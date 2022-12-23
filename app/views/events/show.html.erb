@@ -23,4 +23,41 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="event-comments mt-3">
+
+        <%= render partial: "comments/form", locals: { comment: @new_comment || @event.comments.build } %>
+
+        <div class="mt-3 mb-3">
+          <%= render partial: "comments/comment", collection: @event.comments.except(@new_comment) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="event-owner">
+        <h4><%= t ".inviter" %></h4>
+        <p><%= render partial: "users/user", object: @event.user %></p>
+      </div>
+      <div class="event-subscriptions">
+        <h4><%= t ".subscribers" %></h4>
+        <div>
+          <p>
+            <%= render partial: "subscriptions/subscription", collection: @event.subscriptions.except(@new_subscription) %>
+          </p>
+        </div>
+      </div>
+
+      <% if !user_signed_in? || !current_user.subscriptions.find_by(event_id: @event.id).present?%>
+        <div class="event-subscription-form">
+          <h4><%= t ".subscribe" %></h4>
+          <div>
+            <%= render partial: "subscriptions/form", locals: { subscription: @new_subscription || @event.subscriptions.build } %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

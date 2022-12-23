@@ -1,0 +1,30 @@
+<%= form_for [@event, comment] do |f| %>
+  <%= render partial: 'partials/form_errors', locals: {model: comment} %>
+  <div class="field mt-2">
+    <div class="input-group">
+        <span class="input-group-text">
+          <i class="bi bi-chat-square-text"></i>
+        </span>
+      <%= f.text_area :body,
+                       placeholder: t(".comment"),
+                       class: "form-control" %>
+    </div>
+  </div>
+
+  <% unless user_signed_in? %>
+    <div class="field mt-2">
+      <div class="input-group">
+          <span class="input-group-text">
+            <i class="bi bi-person"></i>
+          </span>
+        <%= f.text_field :user_name,
+                        placeholder: t(".user_name"),
+                        class: "form-control" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="actions mt-3">
+    <%= f.submit t(".send"), class: 'btn btn-primary' %>
+  </div>
+<% end %>

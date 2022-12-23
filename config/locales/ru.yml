@@ -1,11 +1,17 @@
 ru:
   activerecord:
     attributes:
+      comment:
+        body: "Комментарий"
+        user_name: "Имя"
       event:
         address: "Адрес"
         datetime: "Дата и время"
         description: "Описание"
         title: "Название"
+      subscription:
+        user_name: "Имя пользователя"
+        user_email: "Email"
       user:
         email: "Email"
         name: "Имя"
@@ -41,11 +47,33 @@ ru:
       title: "Редактирование события"
     show:
       change: "Редактировать"
+      inviter: "Зовёт:"
+      subscribers: "Идут:"
+      subscribe: "Я пойду:"
+  comments:
+    delete:
+      body: "Вы точно хотите удалить комментарий?"
+      cancel: "Отменить"
+      confirm: "Удалить"
+      title: "Подтвердите действие"
+    form:
+      comment: "Новый комментарий"
+      user_name: "Имя пользователя"
+      send: "Отправить"
   controllers:
     events:
       created: "Событие было успешно создано"
       destroyed: "Собитие было успешно удалено"
       updated: "Событие было успешно изменено"
+    comments:
+      created: "Комментарий успешно создан"
+      destroyed: "Комментарий успешно удален"
+      error: "Ошибка при выполнении действия над комментарием"
+    subscriptions:
+      created: "Вы успешно подписались на событие"
+      destroyed: "Вы успешно отписались от события"
+      error_sub: "Не удалось подписаться"
+      error_unsub: "Не удалось отписаться"
   users:
     edit:
       current_pass: "Текущий пароль"
@@ -63,6 +91,16 @@ ru:
       edit: "Редактировать"
       no_events: "Пользователь пока ещё не организовал ни одного события"
       organized: "Организовал"
+  subscriptions:
+    subscription:
+      delete:
+        body: "Вы точно хотите отписаться?"
+        cancel: "Отмена"
+        confirm: "Отписаться"
+        title: "Подтвердите действие"
+    form:
+      user_name: "Имя"
+      subscribe: "Подписаться"
   words:
     errors:
       one: "%{count} ошибку"

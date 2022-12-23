@@ -109,3 +109,11 @@
 #event_datetime_5i {
     width: 13%;
 }
+
+.btn-small {
+    padding: 0 !important;
+    width: 1.5em !important;
+    height: 1.5em !important;
+    font-size: 0.8em !important;
+    border: 0px !important;
+}

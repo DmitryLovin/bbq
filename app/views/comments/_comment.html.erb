@@ -1,0 +1,38 @@
+<div class="mb-2">
+  <p><%= comment.body %></p>
+  <p>
+    <span>
+      <% if comment.user.present? %>
+        <%= render partial: "users/user", object: comment.user %>
+      <% else %>
+        <em><strong><%= comment.user_name %></strong></em>
+      <% end %>
+    </span>
+    <em><%= l comment.created_at, format: :short %></em>
+    <% if current_user_can_edit?(comment) %>
+      <button type="button" class="btn btn-danger btn-small" data-bs-toggle="modal" data-bs-target="#deleteComment">
+        <span><i class="bi bi-trash"></i></span>
+      </button>
+      <div class="modal fade" id="deleteComment" tabindex="-1" aria-labelledby="deleteCommentLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteCommentLabel"><%= t("comments.delete.title") %></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <%= t("comments.delete.body") %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("comments.delete.cancel") %></button>
+              <%= button_to t("comments.delete.confirm"),
+                            event_comment_path(comment.event, comment),
+                            method: :delete,
+                            class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </p>
+</div>
