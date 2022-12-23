@@ -23,6 +23,7 @@ ru:
       user: "Пользователь"
     validates:
       subscriptions:
+        foreign_email: "Нельзя использовать чужой email для регистрации"
         self_subscription: "Нельзя подписаться на собственное событие"
 
   comments:
