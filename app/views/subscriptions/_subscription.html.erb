@@ -4,29 +4,30 @@
   <% else %>
     <em><%= subscription.user_name %></em>
   <% end %>
+
   <% if current_user_can_edit?(subscription) %>
     <button type="button" class="btn btn-danger btn-small" data-bs-toggle="modal" data-bs-target="#deleteSub">
-        <span><i class="bi bi-person-x"></i></span>
-      </button>
-      <div class="modal fade" id="deleteSub" tabindex="-1" aria-labelledby="deleteSubLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="deleteSubLabel"><%= t(".delete.title") %></h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <%= t(".delete.body") %>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t(".delete.cancel") %></button>
-              <%= button_to t(".delete.confirm"),
-                            event_subscription_path(subscription.event, subscription),
-                            method: :delete,
-                            class: "btn btn-primary" %>
-            </div>
+      <span><i class="bi bi-person-x"></i></span>
+    </button>
+    <div class="modal fade" id="deleteSub" tabindex="-1" aria-labelledby="deleteSubLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteSubLabel"><%= t(".delete.title") %></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= t(".delete.body") %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t(".delete.cancel") %></button>
+            <%= button_to t(".delete.confirm"),
+                          event_subscription_path(subscription.event, subscription),
+                          method: :delete,
+                          class: "btn btn-primary" %>
           </div>
         </div>
       </div>
+    </div>
   <% end %>
 </span>

@@ -1,23 +1,22 @@
 <div class="text-center">
   <h1><%= @user.name %></h1>
-
   <%= image_tag user_avatar(@user) %>
 
   <% if @user == current_user %>
     <p class="buffer-top">
-      <%= link_to t("users.show.edit"), edit_user_registration_path, class: "btn btn-primary" %>
+      <%= link_to t(".edit"), edit_user_registration_path, class: "btn btn-primary" %>
     </p>
   <% end %>
 
   <div class="row">
     <div class="col-md-12">
       <% if @user.events.any? %>
-        <h3><%= t("users.show.organized") %>:</h3>
+        <h3 class="mb-2"><%= t(".organized") %>:</h3>
         <div class="row">
           <%= render partial: "events/event", collection: @user.events %>
         </div>
       <% else %>
-        <p class="buffer-top"><%= t("users.show.no_events") %></p>
+        <p class="buffer-top"><%= t(".no_events") %></p>
       <% end %>
     </div>
   </div>

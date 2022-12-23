@@ -17,15 +17,15 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="deleteCommentLabel"><%= t("comments.delete.title") %></h5>
+              <h5 class="modal-title" id="deleteCommentLabel"><%= t(".delete.title") %></h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <%= t("comments.delete.body") %>
+              <%= t(".delete.body") %>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("comments.delete.cancel") %></button>
-              <%= button_to t("comments.delete.confirm"),
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t(".delete.cancel") %></button>
+              <%= button_to t(".delete.confirm"),
                             event_comment_path(comment.event, comment),
                             method: :delete,
                             class: "btn btn-primary" %>

@@ -1,8 +1,7 @@
-<h2><%= t("application.loginning") %></h2>
+<h2><%= t(".title") %></h2>
 
 <div class="col-md-8">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
     <div class="field mt-2">
       <div class="input-group">
         <span class="input-group-text">
@@ -29,7 +28,6 @@
     </div>
 
     <% if devise_mapping.rememberable? %>
-
       <div class="field mt-2">
         <div class="input-group">
         <span class="input-group-text">
@@ -38,14 +36,12 @@
           <%= f.label :remember_me, class: "form-control" %>
         </div>
       </div>
-
     <% end %>
 
-    <div class="actions mt-2">
-      <%= f.submit t("application.log_in"), class: "btn btn-primary" %>
-      <%= t("application.or") %>
-      <%= link_to t("application.sign_up"), new_user_registration_path %>
+    <div class="actions mt-3">
+      <%= f.submit t("layouts.application.log_in"), class: "btn btn-primary" %>
+      <%= t("layouts.application.or") %>
+      <%= link_to t("layouts.application.sign_up"), new_user_registration_path %>
     </div>
   <% end %>
-
 </div>

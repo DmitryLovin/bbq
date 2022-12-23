@@ -3,7 +3,6 @@
     <div class="col-md-12">
       <%= content_tag "div", "", class: "event-background",
                       style: "background-image: url(#{asset_path("events.png")})" %>
-
       <div class="event-info-inner row">
         <div class="col-md-6 mt-3">
           <div class="event-description">
@@ -15,7 +14,7 @@
           </div>
           <% if current_user_can_edit?(@event) %>
             <div class="mt-2 mb-2">
-              <%= link_to t("events.show.change"), edit_event_path(@event),
+              <%= link_to t(".change"), edit_event_path(@event),
                           class: "btn btn-primary" %>
             </div>
           <% end %>

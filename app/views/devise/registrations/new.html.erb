@@ -1,9 +1,8 @@
-<h2><%= t("application.signuping") %></h2>
-<div class="col-md-8">
+<h2><%= t(".title") %></h2>
 
+<div class="col-md-8">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "partials/form_errors", model: resource %>
-
     <div class="field mb-2">
       <div class="input-group">
         <span id="email-addon" class="input-group-text">
@@ -36,7 +35,7 @@
         </span>
         <% password_placeholder = t("activerecord.attributes.user.password") %>
         <% if @minimum_password_length %>
-          <% password_placeholder += " (#{t("application.pass_length", number: @minimum_password_length)})" %>
+          <% password_placeholder += " (#{t("devise.registrations.pass_length", number: @minimum_password_length)})" %>
         <% end %>
         <%= f.password_field :password,
                              autocomplete: "new-password",
@@ -58,10 +57,9 @@
     </div>
 
     <div class="actions mb-2">
-      <%= f.submit t("application.sign_up"), class: "btn btn-primary" %>
-      <%= t("application.or") %>
-      <%= link_to t("application.log_in"), new_user_session_path %>
+      <%= f.submit t("layouts.application.sign_up"), class: "btn btn-primary" %>
+      <%= t("layouts.application.or") %>
+      <%= link_to t("layouts.application.log_in"), new_user_session_path %>
     </div>
-
   <% end %>
 </div>

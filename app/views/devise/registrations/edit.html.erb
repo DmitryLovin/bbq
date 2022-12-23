@@ -1,10 +1,8 @@
-<h2><%= t("users.edit.title") %></h2>
+<h2><%= t(".title") %></h2>
 
 <div class="col-md-8">
-
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "partials/form_errors", model: resource %>
-
     <div class="field mb-2">
       <div class="input-group">
         <span class="input-group-text">
@@ -35,9 +33,9 @@
         <span class="input-group-text">
           <i class="bi bi-key"></i>
         </span>
-        <% password_placeholder = t("users.edit.leave_empty") %>
+        <% password_placeholder = t(".pass_hint") %>
         <% if @minimum_password_length %>
-          <% password_placeholder += " (#{t("application.pass_length", number: @minimum_password_length)})" %>
+          <% password_placeholder += " (#{t("devise.registrations.pass_length", number: @minimum_password_length)})" %>
         <% end %>
         <%= f.password_field :password,
                              autocomplete: "new-password",
@@ -65,34 +63,33 @@
         </span>
         <%= f.password_field :current_password,
                              autocomplete: "current-password",
-                             placeholder: t("users.edit.current_pass"),
+                             placeholder: t(".current_pass"),
                              class: "form-control" %>
       </div>
-      <i>(<%= t("users.edit.current_pass_hint") %>)</i>
+      <i>(<%= t(".current_pass_hint") %>)</i>
     </div>
 
     <div class="actions mb-2">
-      <%= f.submit t("users.edit.update"), class: "btn btn-primary" %>
+      <%= f.submit t(".save"), class: "btn btn-primary" %>
     </div>
-
   <% end %>
 
   <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteAcc">
-    <%= t("users.edit.delete.btn") %>
+    <%= t(".delete.btn") %>
   </button>
   <div class="modal fade" id="deleteAcc" tabindex="-1" aria-labelledby="deleteAccLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="deleteAccLabel"><%= t("users.edit.delete.title") %></h5>
+          <h5 class="modal-title" id="deleteAccLabel"><%= t(".delete.title") %></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <%= t("users.edit.delete.body") %>
+          <%= t(".delete.body") %>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("users.edit.delete.cancel") %></button>
-          <%= button_to t("users.edit.delete.confirm"),
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t(".delete.cancel") %></button>
+          <%= button_to t(".delete.confirm"),
                         registration_path(resource),
                         method: :delete,
                         class: "btn btn-primary" %>
@@ -100,6 +97,5 @@
       </div>
     </div>
   </div>
-  <p class="mt-2"><%= link_to t("application.back"), :back %></p>
+  <p class="mt-2"><%= link_to t("layouts.application.back"), :back %></p>
 </div>
-

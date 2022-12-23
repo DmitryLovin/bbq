@@ -20,90 +20,107 @@ ru:
     models:
       event: "Событие"
       user: "Пользователь"
-  application:
-    account: "Профиль"
-    back: "Назад"
-    log_in: "Войти"
-    loginning: "Вход"
-    or: "или"
-    sign_up: "Зарегистрироваться"
-    signuping: "Регистрация"
-    sign_out: "Выйти"
-    pass_length: "минимум %{number} символов"
+
+  comments:
+    comment:
+      delete:
+        body: "Вы точно хотите удалить комментарий?"
+        cancel: "Отменить"
+        confirm: "Удалить"
+        title: "Подтвердите действие"
+    form:
+      comment: "Новый комментарий"
+      send: "Отправить"
+
+  controllers:
+    comments:
+      created: "Комментарий успешно создан"
+      destroyed: "Комментарий успешно удален"
+      error: "Ошибка при выполнении действия над комментарием"
+    events:
+      created: "Событие было успешно создано"
+      destroyed: "Собитие было успешно удалено"
+      updated: "Событие было успешно изменено"
+    subscriptions:
+      created: "Вы успешно подписались на событие"
+      destroyed: "Вы успешно отписались от события"
+      error_sub: "Не удалось подписаться"
+      error_unsub: "Не удалось отписаться"
+
+  devise:
+    registrations:
+      edit:
+        current_pass: "Текущий пароль"
+        current_pass_hint: "нам нужен ваш тукущий пароль, чтобы подтвердить ваши изменения"
+        delete:
+          body: "Вы точно хотите удалить свой аккаунт?"
+          btn: "Удалить аккаунт"
+          cancel: "Отмена"
+          confirm: "Удалить"
+          title: "Подтвердите действие"
+        pass_hint: "Оставьте пустым, если не хотите менять пароль"
+        save: "Сохранить"
+        title: "Редактирование профиля"
+      new:
+        title: "Регистрация"
+      pass_length: "минимум %{number} символов"
+    sessions:
+      new:
+        title: "Вход"
+
   events:
-    index:
-      create: "Создать событие"
-      events: "События"
-    new:
-      title: "Новое событие"
-      save: "Сохранить"
     edit:
+      title: "Редактирование события"
+    form:
       delete:
         body: "Вы точно хотите удалить событие?"
         btn: "Удалить событие"
         cancel: "Отменить"
         confirm: "Удалить"
         title: "Подтвердите действие"
-      title: "Редактирование события"
+      save: "Сохранить"
+    index:
+      create: "Создать событие"
+      events: "События"
+    new:
+      title: "Новое событие"
     show:
       change: "Редактировать"
       inviter: "Зовёт:"
       subscribers: "Идут:"
       subscribe: "Я пойду:"
-  comments:
-    delete:
-      body: "Вы точно хотите удалить комментарий?"
-      cancel: "Отменить"
-      confirm: "Удалить"
-      title: "Подтвердите действие"
-    form:
-      comment: "Новый комментарий"
-      user_name: "Имя пользователя"
-      send: "Отправить"
-  controllers:
-    events:
-      created: "Событие было успешно создано"
-      destroyed: "Собитие было успешно удалено"
-      updated: "Событие было успешно изменено"
-    comments:
-      created: "Комментарий успешно создан"
-      destroyed: "Комментарий успешно удален"
-      error: "Ошибка при выполнении действия над комментарием"
-    subscriptions:
-      created: "Вы успешно подписались на событие"
-      destroyed: "Вы успешно отписались от события"
-      error_sub: "Не удалось подписаться"
-      error_unsub: "Не удалось отписаться"
-  users:
-    edit:
-      current_pass: "Текущий пароль"
-      current_pass_hint: "нам нужен ваш тукущий пароль, чтобы подтвердить ваши изменения"
-      delete:
-        body: "Вы точно хотите удалить свой аккаунт?"
-        btn: "Удалить аккаунт"
-        cancel: "Отмена"
-        confirm: "Удалить"
-        title: "Подтвердите действие"
-      leave_empty: "Оставьте пустым, если не хотите менять пароль"
-      title: "Редактирование профиля"
-      update: "Сохранить"
-    show:
-      edit: "Редактировать"
-      no_events: "Пользователь пока ещё не организовал ни одного события"
-      organized: "Организовал"
+
+  layouts:
+    application:
+      account: "Профиль"
+      back: "Назад"
+      log_in: "Войти"
+      or: "или"
+      sign_out: "Выйти"
+      sign_up: "Зарегистрироваться"
+
+  partials:
+    form_errors:
+      label: "Форма содержит"
+
   subscriptions:
+    form:
+      subscribe: "Подписаться"
     subscription:
       delete:
         body: "Вы точно хотите отписаться?"
         cancel: "Отмена"
         confirm: "Отписаться"
         title: "Подтвердите действие"
-    form:
-      user_name: "Имя"
-      subscribe: "Подписаться"
+
+  users:
+    show:
+      edit: "Редактировать"
+      no_events: "Пользователь пока ещё не организовал ни одного события"
+      organized: "Организовал"
+
   words:
     errors:
       one: "%{count} ошибку"
       few: "%{count} ошибки"
       many: "%{count} ошибок"
-
