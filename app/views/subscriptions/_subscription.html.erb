@@ -6,14 +6,14 @@
   <% end %>
 
   <% if current_user_can_edit?(subscription) %>
-    <button type="button" class="btn btn-danger btn-small" data-bs-toggle="modal" data-bs-target="#deleteSub">
+    <button type="button" class="btn btn-danger btn-small" data-bs-toggle="modal" data-bs-target=<%= "#deleteSub#{subscription.id}" %>>
       <span><i class="bi bi-person-x"></i></span>
     </button>
-    <div class="modal fade" id="deleteSub" tabindex="-1" aria-labelledby="deleteSubLabel" aria-hidden="true">
+    <div class="modal fade" id=<%= "deleteSub#{subscription.id}" %> tabindex="-1" aria-labelledby=<%= "deleteSubLabel#{subscription.id}" %> aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="deleteSubLabel"><%= t(".delete.title") %></h5>
+            <h5 class="modal-title" id=<%= "#deleteSubLabel#{subscription.id}" %>><%= t(".delete.title") %></h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">

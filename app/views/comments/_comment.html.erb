@@ -10,14 +10,14 @@
     </span>
     <em><%= l comment.created_at, format: :short %></em>
     <% if current_user_can_edit?(comment) %>
-      <button type="button" class="btn btn-danger btn-small" data-bs-toggle="modal" data-bs-target="#deleteComment">
+      <button type="button" class="btn btn-danger btn-small" data-bs-toggle="modal" data-bs-target=<%="#deleteComment#{comment.id}" %>>
         <span><i class="bi bi-trash"></i></span>
       </button>
-      <div class="modal fade" id="deleteComment" tabindex="-1" aria-labelledby="deleteCommentLabel" aria-hidden="true">
+      <div class="modal fade" id=<%= "deleteComment#{comment.id}" %> tabindex="-1" aria-labelledby=<%= "deleteCommentLabel#{comment.id}" %> aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="deleteCommentLabel"><%= t(".delete.title") %></h5>
+              <h5 class="modal-title" id=<%= "deleteCommentLabel#{comment.id}" %>><%= t(".delete.title") %></h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
