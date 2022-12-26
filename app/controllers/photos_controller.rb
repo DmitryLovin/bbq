@@ -3,9 +3,14 @@ class PhotosController < ApplicationController
   before_action :set_photo, only: %i[ destroy ]
 
   def create
+    
     @new_photo = @event.photos.build(photo_params)
     @new_photo.user = current_user
 
+    if Rails.env.production?
+      response.add_header("x-amz-acl", "authenticated-read")
+    end
+    
     if @new_photo.save
       redirect_to @event, notice: I18n.t("controllers.photos.created")
     else
