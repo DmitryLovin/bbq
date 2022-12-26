@@ -41,6 +41,6 @@ class PhotosController < ApplicationController
   end
 
   def set_headers
-    response.headers["x-amz-acl"] = "authenticated-read"
+    response.headers["x-amz-acl"] = "public-read"
   end
 end
