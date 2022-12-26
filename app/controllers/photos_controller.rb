@@ -1,7 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_event, only: %i[ create destroy ]
   before_action :set_photo, only: %i[ destroy ]
-  before_action :set_headers, if: -> { Rails.env.production? }
 
   def create
     @new_photo = @event.photos.build(photo_params)
@@ -38,9 +37,5 @@ class PhotosController < ApplicationController
 
   def photo_params
     params.fetch(:photo, {}).permit(:photo)
-  end
-
-  def set_headers
-    response.headers["x-amz-acl"] = "public-read"
   end
 end
