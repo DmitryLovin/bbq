@@ -9,14 +9,6 @@ module ApplicationHelper
     end
   end
 
-  def env_upload_method
-    if Rails.env.production?
-      :put
-    else
-      :post
-    end
-  end
-
   def event_photo(event)
     photos = event.photos.persisted
 
