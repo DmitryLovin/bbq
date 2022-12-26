@@ -1,6 +1,33 @@
 <div class="text-center">
   <h1><%= @user.name %></h1>
-  <%= image_tag user_avatar(@user) %>
+  <div class="avatar-parent">
+    <%= image_tag user_avatar(@user), class: "img-avatar" %>
+    <% if @user == current_user %>
+      <button type="button" class="btn avatar-edit-btn" data-bs-toggle="modal" data-bs-target=<%= "#editAvatar" %>>
+        <span><i class="bi bi-pencil-fill"></i></span>
+      </button>
+      <div class="modal fade" id="editAvatar" tabindex="-1" aria-labelledby="editAvatarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <%= form_for @user, html: { multipart: true } do |f| %>
+              <div class="modal-header">
+                <h5 class="modal-title" id="editAvatarLabel"><%= t(".avatar.title") %></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="text-left"><%= t(".avatar.body") %></p>
+                <%= f.file_field :avatar, class: "form-control" %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t(".avatar.cancel") %></button>
+                <%= f.submit t(".avatar.save"), class: "btn btn-primary" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
   <% if @user == current_user %>
     <p class="buffer-top">

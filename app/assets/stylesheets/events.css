@@ -11,11 +11,47 @@
     margin-bottom: 20px;
 }
 
+.avatar-parent {
+    position: relative;
+    height: 128px;
+    width: 128px;
+    display: inline-block;
+}
+
 /* Avatars for users & events */
 .img-icon, .img-icon-small {
-    height: 50px;
+    height: 20px;
     width: auto;
     border-radius: 50%;
+}
+
+.img-avatar {
+    position: relative;
+    height: 128px;
+    width: auto;
+    border-radius: .375em;
+}
+
+.avatar-edit-btn {
+    position: absolute;
+    left: 0;
+    width: 128px;
+    height: 128px;
+    border: 2px solid #ccc !important;
+    opacity: 0;
+}
+
+.avatar-edit-btn span {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    color: #333;
+    text-shadow: -1px -1px 0 #ccc, 1px -1px 0 #ccc, -1px 1px 0 #ccc, 1px 1px 0 #ccc;
+}
+
+.avatar-edit-btn:hover {
+    opacity: 1;
+    transition: all ease .2s;
 }
 
 .event-info {
@@ -71,6 +107,18 @@
     height: 400px;
 }
 
+.event-photo {
+    display: inline-block;
+    border: 1px solid #ced4da;
+    border-radius: .375em;
+    overflow: hidden;
+    text-align: center;
+}
+
+.event-photos {
+    display: flex;
+}
+
 .thumbnail {
     position: relative;
     background: transparent;
@@ -110,10 +158,22 @@
     width: 13%;
 }
 
+.group-file {
+    width: 50% !important;
+}
+
+.group-btn {
+    width: 10% !important;
+}
+
 .btn-small {
     padding: 0 !important;
     width: 1.5em !important;
     height: 1.5em !important;
     font-size: 0.8em !important;
     border: 0px !important;
+}
+
+.text-left {
+    text-align: left;
 }

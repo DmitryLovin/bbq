@@ -2,7 +2,7 @@
   <div class="thumbnail">
 
     <%= content_tag "div", "", class: "event-background",
-                    style: "background-image: url(#{asset_path('events_thumb.png')})" %>
+                    style: "background-image: url(#{event_photo_thumb(event)})" %>
 
     <div class="thumbnail-inner event-info-inner">
       <div class="p-2">
@@ -10,6 +10,11 @@
           <h3><%= link_to event.title, event_path(event) %></h3>
           <h3><small><%= l event.datetime, format: :long %></small></h3>
           <div class="mt-2 mb-2 address"><%= event.address %></div>
+          <div class="event-visitors mt-2 mb-2">
+            <% event.visitors.each do |visitor| %>
+              <%= image_tag user_avatar_thumb(visitor), class: "img-icon", title: visitor.name %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
