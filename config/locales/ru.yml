@@ -94,6 +94,11 @@ ru:
       name: "Имя"
       owner: "Организовал"
       title: "Новая подписка"
+    photo:
+      title: "Новая фотография"
+      event: "Событие"
+      photo: "Фотография"
+      owner: "Добавил"
 
   events:
     edit:
