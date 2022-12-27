@@ -76,9 +76,13 @@ ru:
       new:
         title: "Регистрация"
       pass_length: "минимум %{number} символов"
+    passwords:
+      new:
+        title: "Восстановление пароля"
     sessions:
       new:
         title: "Вход"
+        forgot_your_password: "Забыли пароль?"
 
   event_mailer:
     comment:

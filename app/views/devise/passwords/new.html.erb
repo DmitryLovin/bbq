@@ -1,0 +1,28 @@
+<h2><%= t(".title") %></h2>
+
+<div class="col-md-8 mt-3">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "partials/form_errors", model: resource %>
+
+    <div class="field mt-2">
+      <div class="input-group">
+        <span id="email-addon" class="input-group-text">
+          <i class="bi bi-envelope"></i>
+        </span>
+        <%= f.email_field :email,
+                          autofocus: true,
+                          autocomplete: "email",
+                          placeholder: "example@email.com",
+                          class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="actions mt-3">
+      <%= f.submit t(".send_me_reset_password_instructions"), class: "btn btn-primary" %>
+      <%= t("layouts.application.or") %>
+      <%= link_to t("layouts.application.log_in"), new_user_session_path %>
+      <%= t("layouts.application.or") %>
+      <%= link_to t("layouts.application.sign_up"), new_user_registration_path %>
+    </div>
+  <% end %>
+</div>
