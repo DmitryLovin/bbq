@@ -13,6 +13,8 @@ module Bbq
     config.generators.test_framework false
 
     config.i18n.default_locale = :ru
+
+    config.action_mailer.delivery_method = :mailjet
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

@@ -80,6 +80,21 @@ ru:
       new:
         title: "Вход"
 
+  event_mailer:
+    comment:
+      author: "Оставил"
+      datetime: "Состоится"
+      event: "Событие"
+      owner: "Организовал"
+      title: "Новый комментарий"
+    subscription:
+      datetime: "Состоится"
+      email: "Email"
+      event: "Событие"
+      name: "Имя"
+      owner: "Организовал"
+      title: "Новая подписка"
+
   events:
     edit:
       title: "Редактирование события"
@@ -110,6 +125,11 @@ ru:
       or: "или"
       sign_out: "Выйти"
       sign_up: "Зарегистрироваться"
+
+  mailer:
+    subject:
+      newsub: "Новая подписчика на"
+      newcomment: "Новый комментарий"
 
   partials:
     form_errors:
