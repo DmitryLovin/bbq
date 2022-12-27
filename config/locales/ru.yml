@@ -135,6 +135,7 @@ ru:
     subject:
       newsub: "Новая подписчика на"
       newcomment: "Новый комментарий"
+      newphoto: "Новая фотография"
 
   partials:
     form_errors:

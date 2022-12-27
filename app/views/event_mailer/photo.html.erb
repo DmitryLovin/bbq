@@ -3,7 +3,8 @@
 <hr/>
 <p><%= t '.photo' %>:</p>
 <%= link_to image_tag(@photo.photo.thumb.url), @photo.photo.url %>
-
-<%= t '.owner' %>
-<h4><%= @photo.user.name %></h4>
+<hr/>
+<p>
+  <%= t '.owner' %>: <strong><%= @photo.user.name %></strong>
+</p>
 
