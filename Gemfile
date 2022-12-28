@@ -6,7 +6,6 @@ ruby "3.1.2"
 gem "bootsnap", require: false
 gem "carrierwave"
 gem "cssbundling-rails", "~> 1.1"
-gem "jquery-rails"
 gem "devise"
 gem "devise-i18n"
 gem "fog-aws"
