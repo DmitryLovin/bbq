@@ -20,9 +20,10 @@
 
 /* Avatars for users & events */
 .img-icon, .img-icon-small {
-    height: 20px;
-    width: auto;
+    height: 20px !important;
+    width: auto !important;
     border-radius: 50%;
+    display: inline !important;
 }
 
 .img-avatar {
@@ -187,4 +188,10 @@
 
 .map-container .map {
     height: 100%;
+}
+
+.gallery-image {
+    border-radius: .375em;
+    border: 1px solid #ced4da;
+    overflow: hidden;
 }

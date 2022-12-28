@@ -1,7 +1,3 @@
-<div class="event-photo mt-2 mb-2 align-content-center">
-  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
-  <p class="mb-0">
-    <%= t(".author") %>
-    <%= render partial: "users/user", object: photo.user %>
-  </p>
-</div>
+<a href="<%= photo.photo.url %>">
+  <% content = "#{t(".author")}: #{render partial: "users/user", object: photo.user}" %>
+  <img src="<%= photo.photo.thumb.url %>" content="<%= content %>" class="gallery-image"></a>
