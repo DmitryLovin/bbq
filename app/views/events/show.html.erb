@@ -46,10 +46,13 @@
     </div>
 
     <div class="col-md-4">
+      <%= render partial: "events/map", object: @event %>
+
       <div class="event-owner">
         <h4><%= t ".inviter" %></h4>
         <p><%= render partial: "users/user", object: @event.user %></p>
       </div>
+
       <div class="event-subscriptions">
         <h4><%= t ".subscribers" %></h4>
         <div>

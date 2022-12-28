@@ -1,0 +1,13 @@
+<div class="map-container mt-2 mb-3">
+  <div
+    id="event-location"
+    address="<%= @event.address %>"
+  >
+  </div>
+  <div id="map" class="map"></div>
+</div>
+<%= javascript_include_tag "map" %>
+<%=
+  javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials[:gmap_api_key]}&callback=initMap&libraries=places",
+                         defer: true
+%>

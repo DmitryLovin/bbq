@@ -177,3 +177,14 @@
 .text-left {
     text-align: left;
 }
+
+.map-container {
+    height: 220px;
+    border-radius: .375em;
+    border: 1px solid #ced4da;
+    overflow: hidden;
+}
+
+.map-container .map {
+    height: 100%;
+}
