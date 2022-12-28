@@ -8,6 +8,7 @@ ru:
         address: "Адрес"
         datetime: "Дата и время"
         description: "Описание"
+        pincode: "Пин-Код"
         title: "Название"
       photo:
         photo: "Фотография"
@@ -49,6 +50,7 @@ ru:
       created: "Событие было успешно создано"
       destroyed: "Собитие было успешно удалено"
       updated: "Событие было успешно изменено"
+      wrong_pincode: "Пин-Код указан не верно"
     photos:
       created: "Фото было успешно загружено"
       destroyed: "Фото было успешно удалено"
@@ -125,6 +127,9 @@ ru:
       inviter: "Зовёт:"
       subscribers: "Идут:"
       subscribe: "Я пойду:"
+    password_form:
+      title: "Вход только по Пин-коду"
+      open: "Открыть"
 
   layouts:
     application:

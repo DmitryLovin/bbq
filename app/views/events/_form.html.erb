@@ -43,6 +43,17 @@
     </div>
   </div>
 
+  <div class="field mt-2">
+    <div class="input-group">
+        <span class="input-group-text">
+          <i class="bi bi-shield-lock"></i>
+        </span>
+      <%= f.text_field :pincode,
+                      placeholder: t("activerecord.attributes.event.pincode"),
+                      class: "form-control" %>
+    </div>
+  </div>
+
   <div class="actions mt-3">
     <%= f.submit t(".save"), class: "btn btn-primary" %>
   </div>
