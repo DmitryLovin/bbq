@@ -44,6 +44,5 @@ Gemfile.lock
 /app/assets/builds/*
 !/app/assets/builds/.keep
 
-/node_modules
+node_modules/*
 /public/uploads
-14accb6457e74a3419b6a10e8ab6a43e04f5a568ff058e6cb09627656b33ab25de32e8fb1e88cd0999e4a1e58db072f8ef5198066087397f757945ba1e167ef9
