@@ -29,6 +29,9 @@
         <div class="gallery">
           <%= render partial: "photos/photo", collection: @event.photos.except(@new_photo) %>
         </div>
+        <div>
+          <%= render partial: "photos/delete_modal", collection: @event.photos.except(@new_photo), as: :photo %>
+        </div>
         <%= javascript_include_tag "slb", defer: true %>
       <% end %>
 

@@ -151,6 +151,11 @@ ru:
       label: "Форма содержит"
 
   photos:
+    delete_modal:
+      body: "Вы точно хотите удалить фотографию?"
+      cancel: "Отмена"
+      confirm: "Удалить"
+      title: "Подтвердите действие"
     form:
       send: "Добавить"
     photo:

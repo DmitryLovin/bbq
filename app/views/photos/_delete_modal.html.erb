@@ -1,0 +1,22 @@
+<% if current_user_can_edit?(photo) %>
+  <div class="modal fade" id=<%= "deletePhoto#{photo.id}" %> tabindex="-1" aria-labelledby=<%= "deletePhotoLabel#{photo.id}" %> aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id=<%= "deletePhotoLabel#{photo.id}" %>><%= t(".title") %></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= t(".body") %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t(".cancel") %></button>
+          <%= button_to t(".confirm"),
+                        event_photo_path(photo.event, photo),
+                        method: :delete,
+                        class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,3 +1,6 @@
 <a href="<%= photo.photo.url %>">
   <% content = "#{t(".author")}: #{render partial: "users/user", object: photo.user}" %>
+  <% if current_user_can_edit?(photo) %>
+    <% content += render partial: "photos/delete", locals: { photo: photo } %>
+  <% end %>
   <img src="<%= photo.photo.thumb.url %>" content="<%= content %>" class="gallery-image"></a>
