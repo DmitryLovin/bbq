@@ -93,6 +93,7 @@ ru:
       event: "Событие"
       owner: "Организовал"
       title: "Новый комментарий"
+      subject: "Новый комментарий к событию #%{event}"
     subscription:
       datetime: "Состоится"
       email: "Email"
@@ -100,11 +101,13 @@ ru:
       name: "Имя"
       owner: "Организовал"
       title: "Новая подписка"
+      subject: "Новая подписка на событие #%{event}"
     photo:
       title: "Новая фотография"
       event: "Событие"
       photo: "Фотография"
       owner: "Добавил"
+      subject: "Новая фотография к событию #%{event}"
 
   events:
     edit:
@@ -139,12 +142,6 @@ ru:
       or: "или"
       sign_out: "Выйти"
       sign_up: "Зарегистрироваться"
-
-  mailer:
-    subject:
-      newsub: "Новая подписчика на"
-      newcomment: "Новый комментарий"
-      newphoto: "Новая фотография"
 
   partials:
     form_errors:
