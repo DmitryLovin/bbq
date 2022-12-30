@@ -2,9 +2,10 @@
 ----
 
 <%= t '.event' %>: <%= @event %>
-<%= url_for(@event) %>
+<%= t '.link' %>: <%= event_url(@event) %>
 
 <%= t '.photo' %>: <%= @photo.photo.url %>
 
 --------------------------------
 <%= t '.owner' %>: <%= @photo.user.name %>
+<%= t '.link' %>: <%= user_url(@photo.user) %>

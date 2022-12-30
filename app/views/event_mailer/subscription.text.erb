@@ -3,10 +3,13 @@
 
 <%= t ".name" %>: <%= @name %>
 <%= t ".email" %>: <%= @email %>
-
+<% if @subscription.user.present? %>
+  <%= t ".link" %>: <%= user_url(@subscription.user) %>
+<% end %>
 ----------------------
 
 <%= t ".event" %>: <%= @event.title %>
-<%= url_for(@event) %>
+<%= t ".link" %>: <%= event_url(@event) %>
 <%= t ".datetime" %>: <%= l @event.datetime %>
 <%= t ".owner" %>: <%= @event.user.name %>
+<%= t ".link" %>: <%= user_url(@event.user) %>

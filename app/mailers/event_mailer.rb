@@ -3,6 +3,7 @@ class EventMailer < ApplicationMailer
     @email = subscription.user_email
     @name = subscription.user_name
     @event = subscription.event
+    @subscription = subscription
 
     mail to: @event.user.email, subject: default_i18n_subject(event: @event.title)
   end
