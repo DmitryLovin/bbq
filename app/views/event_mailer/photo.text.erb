@@ -1,7 +1,8 @@
 <%= t '.title' %>
 ----
 
-<%= t '.event' %>: <%= @event.title %>
+<%= t '.event' %>: <%= @event %>
+<%= url_for(@event) %>
 
 <%= t '.photo' %>: <%= @photo.photo.url %>
 

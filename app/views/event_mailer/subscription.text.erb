@@ -2,10 +2,11 @@
 ----
 
 <%= t ".name" %>: <%= @name %>
-<%= t ".email" %>: <%=  @email %>
+<%= t ".email" %>: <%= @email %>
 
 ----------------------
 
 <%= t ".event" %>: <%= @event.title %>
+<%= url_for(@event) %>
 <%= t ".datetime" %>: <%= l @event.datetime %>
 <%= t ".owner" %>: <%= @event.user.name %>

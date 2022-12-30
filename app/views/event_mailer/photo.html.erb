@@ -1,5 +1,9 @@
 <h1><%= t '.title' %></h1>
-<p><%= t '.event' %>: <strong><%= @event.title %></strong></p>
+<p><%= t '.event' %>:
+  <strong>
+    <%= link_to @event.title, url_for(@event) %>
+  </strong>
+</p>
 <hr/>
 <p><%= t '.photo' %>:</p>
 <%= link_to image_tag(@photo.photo.thumb.url), @photo.photo.url %>
