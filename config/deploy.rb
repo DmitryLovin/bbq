@@ -6,7 +6,7 @@ lock "~> 3.17.1"
 set :application, "bbq"
 set :repo_url, "git@github.com:DmitryLovin/bbq.git"
 
-set :deploy_to, "/home/deploy/www2/bbq"
+set :deploy_to, "/home/deploy/www2/bbq-deploy"
 set :branch, "main"
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
