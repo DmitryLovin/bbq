@@ -30,6 +30,8 @@ group :development do
   gem "capistrano-passenger"
   gem "capistrano-rbenv"
   gem "capistrano-bundler"
+  gem "ed25519"
+  gem "bcrypt_pbkdf"
 end
 
 group :production do
