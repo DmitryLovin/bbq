@@ -5,7 +5,7 @@
     <em><%= subscription.user_name %></em>
   <% end %>
 
-  <% if current_user_can_edit?(subscription) %>
+  <% if policy(subscription).destroy? %>
     <button type="button" class="btn btn-danger btn-small" data-bs-toggle="modal" data-bs-target=<%= "#deleteSub#{subscription.id}" %>>
       <span><i class="bi bi-person-x"></i></span>
     </button>

@@ -12,7 +12,7 @@
                                    "https://maps.google.com/?q=#{@event.address}" %></small></h3>
             <p><%= @event.description %></p>
           </div>
-          <% if current_user_can_edit?(@event) %>
+          <% if policy(@event).edit? %>
             <div class="mt-2 mb-2">
               <%= link_to t(".change"), edit_event_path(@event),
                           class: "btn btn-primary" %>
@@ -66,7 +66,7 @@
         </div>
       </div>
 
-      <% if !user_signed_in? || (!current_user.subscriptions.find_by(event_id: @event.id).present? && @event.user != current_user) %>
+      <% if policy(@new_subscription).new? %>
         <div class="event-subscription-form">
           <h4><%= t ".subscribe" %></h4>
           <div>

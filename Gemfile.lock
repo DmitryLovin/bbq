@@ -115,12 +115,18 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.10.2)
       devise (>= 4.8.0)
+    diff-lcs (1.5.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     ed25519 (1.3.0)
     erubi (1.11.0)
     excon (0.95.0)
     execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.5)
     fog-aws (3.15.0)
       fog-core (~> 2.1)
@@ -208,6 +214,8 @@ GEM
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
+    pundit (2.3.0)
+      activesupport (>= 3.0.0)
     racc (1.6.1)
     rack (2.2.4)
     rack-test (2.0.2)
@@ -226,6 +234,10 @@ GEM
       activesupport (= 7.0.4)
       bundler (>= 1.15.0)
       railties (= 7.0.4)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -254,8 +266,27 @@ GEM
       netrc (~> 0.8)
     rmagick (5.1.0)
       pkg-config (~> 1.4)
+    rspec-core (3.12.0)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.1)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.11)
+      rspec-expectations (~> 3.11)
+      rspec-mocks (~> 3.11)
+      rspec-support (~> 3.11)
+    rspec-support (3.12.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
+    shoulda-matchers (5.3.0)
+      activesupport (>= 5.2.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -306,15 +337,20 @@ DEPENDENCIES
   devise
   devise-i18n
   ed25519
+  factory_bot_rails
   fog-aws
   importmap-rails
   jsbundling-rails (~> 1.1)
   mailjet
   pg
   puma (~> 5.0)
+  pundit
   rails (~> 7.0.4)
+  rails-controller-testing
   rails-i18n
   rmagick
+  rspec-rails
+  shoulda-matchers
   sprockets-rails
   sqlite3 (~> 1.4)
   twitter-bootstrap-rails

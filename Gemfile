@@ -12,6 +12,7 @@ gem "fog-aws"
 gem "importmap-rails"
 gem "mailjet"
 gem "puma", "~> 5.0"
+gem "pundit"
 gem "rails", "~> 7.0.4"
 gem "rails-i18n"
 gem "rmagick"
@@ -21,6 +22,10 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "factory_bot_rails"
+  gem "rails-controller-testing"
+  gem "rspec-rails"
+  gem "shoulda-matchers"
   gem "sqlite3", "~> 1.4"
 end
 
