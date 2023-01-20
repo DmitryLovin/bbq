@@ -162,10 +162,11 @@ ru:
       author: "Добавил"
 
   pundit:
+    subscription_policy:
+      create?: "Не удалось подписаться на событие"
+      destroy?: "У вас нет прав, чтобы отписать этого пользователя"
     not_authorized: "У вас нет прав на это действие"
     wrong_pincode: "Пин-Код указан не верно"
-    not_a_subscriber: "У вас нет прав, чтобы отписать этого пользователя"
-    sub_error: "Не удалось подписаться на событие"
 
   subscriptions:
     form:

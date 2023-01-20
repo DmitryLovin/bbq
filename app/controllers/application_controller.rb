@@ -26,22 +26,10 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def user_not_authorized(error = nil)
-    if (error&.record.is_a?(Subscription))
-      if(error.query == "create?")
-        flash[:alert] = t("pundit.sub_error")
-      else
-        flash[:alert] = t("pundit.not_a_subscriber")
-      end
+  def user_not_authorized(error)
+    policy_name = error.policy.class.to_s.underscore
 
-      redirect_to event_path(error.record.event)
-    elsif (error&.query == "show?")
-      flash.now[:alert] = t("pundit.wrong_pincode") if error.policy.user.params&.[](:pincode).present?
-
-      render "password_form"
-    else
-      flash[:alert] = t("pundit.not_authorized")
-      redirect_to(request.referrer || root_path)
-    end
+    flash[:alert] = t "#{policy_name}.#{error.query}", scope: "pundit", default: t("pundit.not_authorized")
+    redirect_back(fallback_location: root_path)
   end
 end
