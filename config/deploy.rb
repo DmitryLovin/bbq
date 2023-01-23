@@ -30,7 +30,7 @@ set :branch, "main"
 
 append :linked_files, "config/database.yml", "config/master.key", "config/credentials.yml.enc"
 
-namespace :passenger do
+namespace :deploy do
   after :restart, "resque:restart"
 end
 # Default value for linked_dirs is []
