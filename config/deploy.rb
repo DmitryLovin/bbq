@@ -26,17 +26,17 @@ set :branch, "main"
 # set :pty, true
 
 # Default value for :linked_files is []
-# append :linked_files, "config/database.yml", 'config/master.key'
+# append :linked_files, "config/database.yml", "config/master.key"
 
 append :linked_files, "config/database.yml", "config/master.key", "config/credentials.yml.enc"
-
+after "deploy:restart", "resque:restart"
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpacker", "public/system", "vendor", "storage"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-# Default value for local_user is ENV['USER']
+# Default value for local_user is ENV["USER"]
 # set :local_user, -> { `git config user.name`.chomp }
 
 # Default value for keep_releases is 5

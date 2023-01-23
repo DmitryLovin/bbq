@@ -15,6 +15,7 @@ gem "puma", "~> 5.0"
 gem "pundit"
 gem "rails", "~> 7.0.4"
 gem "rails-i18n"
+gem "resque"
 gem "rmagick"
 gem "sprockets-rails"
 gem "twitter-bootstrap-rails"
@@ -35,8 +36,10 @@ group :development do
   gem "capistrano-passenger"
   gem "capistrano-rbenv"
   gem "capistrano-bundler"
+  gem "capistrano-resque", require: false
   gem "ed25519"
   gem "bcrypt_pbkdf"
+  gem "letter_opener"
 end
 
 group :production do
