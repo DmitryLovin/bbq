@@ -17,19 +17,7 @@ class User < ApplicationRecord
 
   private
 
-  def link_subscriptions
-    Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
-  end
-
-  def set_name
-    self.name = "User##{rand(777)}" if self.name.blank?
-  end
-
-  def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
-  end
-
-  def self.find_for_facebook_oauth(access_token)
+  def self.find_for_oauth(access_token)
     provider = access_token.provider
     email = access_token.info.email
 
@@ -40,29 +28,32 @@ class User < ApplicationRecord
     return user if user.present?
 
     id = access_token.extra.raw_info.id
-    url = "https://facebook.com/#{id}"
+    url = case provider
+          when "facebook" then "https://facebook.com/#{id}"
+          when "github" then access_token.info.urls.GitHub
+          else "#{provider}/#{id}"
+          end
+
+    name = access_token.info.name || access_token.info.nickname
+    avatar_url = access_token.info.image
 
     where(url: url, provider: provider).first_or_create! do |user|
+      user.name = name
+      user.remote_avatar_url = avatar_url
       user.email = email
       user.password = Devise.friendly_token.first(16)
     end
   end
 
-  def self.find_for_github_oauth(access_token)
-    provider = access_token.provider
-    email = access_token.info.email
+  def link_subscriptions
+    Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
+  end
 
-    raise HiddenEmailError.new(provider) if email.nil?
+  def set_name
+    self.name = "User##{rand(777)}" if self.name.blank?
+  end
 
-    user = where(email: email).first
-
-    return user if user.present?
-
-    url = access_token.info.urls.GitHub
-
-    where(url: url, provider: provider).first_or_create! do |user|
-      user.email = email
-      user.password = Devise.friendly_token.first(16)
-    end
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
   end
 end

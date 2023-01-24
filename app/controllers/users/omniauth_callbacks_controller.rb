@@ -1,17 +1,17 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  before_action :set_user, only: %i[ facebook github ]
+
   rescue_from HiddenEmailError, with: :hidden_email
 
   def facebook
-    @user = User.find_for_facebook_oauth(request.env["omniauth.auth"])
-
     complete("Facebook")
   end
 
   def github
-    @user = User.find_for_github_oauth(request.env["omniauth.auth"])
-
     complete("Github")
   end
+
+  private
 
   def complete(provider)
     if @user.persisted?
@@ -28,11 +28,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
-  private
-
   def hidden_email(e)
     flash[:error] = e.message
 
     redirect_to new_user_registration_path
+  end
+
+  def set_user
+    @user = User.find_for_oauth(request.env["omniauth.auth"])
   end
 end
