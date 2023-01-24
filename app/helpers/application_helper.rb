@@ -9,6 +9,10 @@ module ApplicationHelper
     end
   end
 
+  def bs_icon(name)
+    "<i class=\"bi bi-#{name}\"></i>".html_safe
+  end
+
   def event_photo(event)
     photos = event.photos.persisted
 

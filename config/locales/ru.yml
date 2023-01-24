@@ -146,6 +146,9 @@ ru:
       sign_out: "Выйти"
       sign_up: "Зарегистрироваться"
 
+  oauth:
+    hidden_email: "Не удалось войти, так как ваш email на %{provider} скрыт. Попробуйте зарегистрироваться."
+
   partials:
     form_errors:
       label: "Форма содержит"
