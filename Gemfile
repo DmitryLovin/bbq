@@ -5,7 +5,6 @@ ruby "3.1.2"
 
 gem "bootsnap", require: false
 gem "carrierwave"
-gem "cssbundling-rails", "~> 1.1"
 gem "devise"
 gem "devise-i18n"
 gem "fog-aws"
@@ -18,7 +17,6 @@ gem "rails-i18n"
 gem "resque"
 gem "rmagick"
 gem "sprockets-rails"
-gem "twitter-bootstrap-rails"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do

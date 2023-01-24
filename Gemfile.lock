@@ -102,12 +102,9 @@ GEM
       marcel (~> 1.0.0)
       mini_mime (>= 0.1.3)
       ssrf_filter (~> 1.0)
-    commonjs (0.2.7)
     concurrent-ruby (1.1.10)
     connection_pool (2.3.0)
     crass (1.0.6)
-    cssbundling-rails (1.1.2)
-      railties (>= 6.0.0)
     date (3.3.3)
     debug (1.7.0)
       irb (>= 1.5.0)
@@ -128,7 +125,6 @@ GEM
     et-orbi (1.2.7)
       tzinfo
     excon (0.95.0)
-    execjs (2.8.1)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
@@ -174,12 +170,6 @@ GEM
       railties (>= 6.0.0)
     launchy (2.5.2)
       addressable (~> 2.8)
-    less (2.6.0)
-      commonjs (~> 0.2.7)
-    less-rails (4.0.0)
-      actionpack (>= 4)
-      less (~> 2.6.0)
-      sprockets (>= 2)
     letter_opener (1.8.1)
       launchy (>= 2.2, < 3)
     loofah (2.19.1)
@@ -347,11 +337,6 @@ GEM
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.1)
-    twitter-bootstrap-rails (5.0.0)
-      actionpack (>= 5.0, < 8.0)
-      execjs (~> 2.7)
-      less-rails (>= 3.0, < 5.0)
-      railties (>= 5.0, < 8.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
@@ -378,7 +363,6 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano-resque
   carrierwave
-  cssbundling-rails (~> 1.1)
   debug
   devise
   devise-i18n
@@ -401,7 +385,6 @@ DEPENDENCIES
   shoulda-matchers
   sprockets-rails
   sqlite3 (~> 1.4)
-  twitter-bootstrap-rails
   tzinfo-data
 
 RUBY VERSION

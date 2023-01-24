@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
     all_emails -= [comment.user&.email]
 
     all_emails.each do |mail|
-      EventMailer.comment(comment, mail).deliver_later
+      MailJob.perform_later(comment, mail)
     end
   end
 

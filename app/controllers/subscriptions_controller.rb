@@ -9,7 +9,7 @@ class SubscriptionsController < ApplicationController
     authorize(@new_subscription)
 
     if @new_subscription.save
-      EventMailer.subscription(@new_subscription).deliver_later
+      MailJob.perform_later(@new_subscription, @event.user.email)
 
       redirect_to @event, notice: I18n.t("controllers.subscriptions.created")
     else
