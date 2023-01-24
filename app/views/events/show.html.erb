@@ -35,9 +35,11 @@
         <%= javascript_include_tag "slb", defer: true %>
       <% end %>
 
-      <div class="event-photos mt-3">
-        <%= render partial: "photos/form", locals: { photo: @new_photo || @event.photos.build } %>
-      </div>
+      <% if policy(Photo).new? %>
+        <div class="event-photos mt-3">
+          <%= render partial: "photos/form", locals: { photo: @new_photo || @event.photos.build } %>
+        </div>
+      <% end %>
 
       <div class="event-comments mt-3">
 

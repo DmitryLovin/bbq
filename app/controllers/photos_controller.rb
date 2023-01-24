@@ -6,6 +6,8 @@ class PhotosController < ApplicationController
     @new_photo = @event.photos.build(photo_params)
     @new_photo.user = current_user
 
+    authorize(@new_photo)
+
     if @new_photo.save
       notify_subscribers(@new_photo)
 
