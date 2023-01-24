@@ -28,7 +28,7 @@ set :branch, "main"
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", "config/master.key"
 
-append :linked_files, "config/database.yml", "config/master.key", "config/credentials.yml.enc"
+append :linked_files, "config/database.yml", "config/master.key"
 
 namespace :deploy do
   after :restart, "resque:restart"
