@@ -195,3 +195,15 @@
     border: 1px solid #ced4da;
     overflow: hidden;
 }
+
+.btn-medium {
+    padding: 0 !important;
+    width: 1.5em !important;
+    height: 1.5em !important;
+    font-size: 1em !important;
+    border: 0px !important;
+}
+
+.inline-form {
+    display: inline-block;;
+}
