@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
     authorize(@new_photo)
 
     if @new_photo.save
-      notify_subscribers(@new_photo)
+      EventNotificationJob.perform_later(@new_photo)
 
       redirect_to @event, notice: I18n.t("controllers.photos.created")
     else
@@ -20,7 +20,7 @@ class PhotosController < ApplicationController
   def destroy
     message = { notice: I18n.t("controllers.photos.destroyed") }
 
-    if (current_user_can_edit?(@photo))
+    if current_user_can_edit?(@photo)
       @photo.destroy
     else
       message = { alert: I18n.t("controllers.photos.error") }
@@ -30,14 +30,6 @@ class PhotosController < ApplicationController
   end
 
   private
-
-  def notify_subscribers(photo)
-    all_emails = (photo.event.subscriptions.map(&:user_email) + [photo.event.user.email] - [photo.user.email]).uniq
-
-    all_emails.each do |mail|
-      MailJob.perform_later(photo, mail)
-    end
-  end
 
   def set_event
     @event = Event.find(params[:event_id])

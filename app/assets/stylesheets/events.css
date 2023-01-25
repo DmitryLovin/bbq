@@ -207,3 +207,11 @@
 .inline-form {
     display: inline-block;;
 }
+
+.subscription {
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    margin-bottom: 0.2em;
+    padding: 0px 4px 2px 3px;
+}
