@@ -9,11 +9,11 @@ class EventsController < ApplicationController
   end
 
   def show
-    authorize(@event)
-
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
     @new_photos = @event.photos.build(params[:photo])
+
+    authorize(@event)
   rescue Pundit::NotAuthorizedError
     flash.now[:alert] = t("pundit.wrong_pincode") if params[:pincode].present?
 

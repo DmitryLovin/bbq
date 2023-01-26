@@ -4,6 +4,7 @@ class Subscription < ApplicationRecord
 
   validates :event, presence: true
   validates :user_name, presence: true, unless: -> { user.present? }
+  validates :user_name, length: { maximum: 35 }
   validates :user_email, presence: true,
             format: { with: URI::MailTo::EMAIL_REGEXP },
             unless: -> { user.present? }

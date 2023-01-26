@@ -55,6 +55,10 @@
     transition: all ease .2s;
 }
 
+.comment-body {
+    word-wrap: anywhere;
+}
+
 .event-info {
     position: relative;
     color: white;
