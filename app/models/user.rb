@@ -15,8 +15,6 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  private
-
   def self.find_for_oauth(access_token)
     provider = access_token.provider
     email = access_token.info.email
@@ -44,6 +42,8 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token.first(16)
     end
   end
+
+  private
 
   def link_subscriptions
     Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
