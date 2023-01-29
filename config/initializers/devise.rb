@@ -273,7 +273,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook, Rails.application.credentials[Rails.env.to_sym][:omniauth_fb_id],
-                  Rails.application.credentials[Rails.env.to_sym][:omniauth_fb_secret]
+                  Rails.application.credentials[Rails.env.to_sym][:omniauth_fb_secret],
+                  image_size: "large"
 
   config.omniauth :github, Rails.application.credentials[Rails.env.to_sym][:omniauth_gh_id],
                   Rails.application.credentials[Rails.env.to_sym][:omniauth_gh_secret],
