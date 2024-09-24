@@ -12,7 +12,7 @@ module Bbq
     config.load_defaults 7.0
     config.generators.test_framework false
 
-    config.i18n.default_locale = :ru
+    config.i18n.default_locale = :en
 
     config.action_mailer.delivery_method = :mailjet
     # Configuration for the application, engines, and railties goes here.
